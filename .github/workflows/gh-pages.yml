@@ -15,7 +15,7 @@ jobs:
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-	  
+
       - uses: actions/setup-node@v3
         with:
           node-version: 15
