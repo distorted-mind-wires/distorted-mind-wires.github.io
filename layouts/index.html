@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        {{partial "header.html" . }}
+	</head>
+	<body>
+        {{partial "head.html" . }}
+        <main>
+            <section id ="welcome">
+                <p> <b> Welcome! </b> This is <i> Distorted Mind Wires. </i> <br/> If you want to know more about this blog, see <a href="/about">About</a> page.</p>
+            </section>
+            <section id="latest-posts">
+                <h4> Latest posts: </h4>
+                <ul>
+                    {{ range (last 5 (where .Site.RegularPages.ByPublishDate "Section" "posts")).Reverse }}
+                    <li> <a class="link" href="{{.Permalink}}"> {{ .Title }} </a> - <span class="short-description"> {{ .Description }} </span> </li>
+                    {{end}}
+                </ul>
+            </section>
+            <h4 class="post-header"> Our latest post... </h4>
+            <section id="latest-post">
+                {{ range (last 1 (where .Site.RegularPages.ByPublishDate "Section" "posts")) }}
+                    {{ partial "post-content.html" . }}
+                {{end}}
+            </section>
+            <footer>
+                Distorted Mind Wires - All Rights Reserved.
+            </footer>
+        </main>
+	</body>
+</html>

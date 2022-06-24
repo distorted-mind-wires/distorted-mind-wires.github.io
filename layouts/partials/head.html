@@ -1,0 +1,16 @@
+<div id="back-to-top">
+    <a href="#">{{ readFile "assets/jump-to-top.svg" | safeHTML }}</a>
+</div>
+<header>
+    <nav id="website-header">
+        <div id="website-name">
+            <a href="/"> <b> {{.Site.Params.Name}}</b> </a>
+        </div>
+        <div id="website-links">
+            <a href="/posts"> Archive </a> /
+            <a href="/tags"> Tags </a> /
+            <a href="/about"> About </a> /
+            <a href="/index.xml"> RSS </a href>
+        </div>
+    </nav>
+</header>

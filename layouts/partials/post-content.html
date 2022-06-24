@@ -1,0 +1,12 @@
+<article class="post">
+    <h1> <a href="{{.Permalink }}"> {{.Title}} </a> </h1>
+    <h3 class="post-description"> {{.Description}} </h3>
+    {{ if (.Params.toc) }}
+    <aside>
+        {{ .TableOfContents }}
+    </aside>
+    {{ end }}
+    <section class="content">
+        {{.Content}}
+    </section>
+</article>

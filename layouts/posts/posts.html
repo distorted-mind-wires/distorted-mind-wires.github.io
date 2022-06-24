@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        {{partial "header.html" . }}
+	</head>
+	<body>
+        {{partial "head.html" . }}
+        <main>
+            <article class="page">
+                <h1> Post Archive </h1>
+                <ul>
+                {{ range (where .Site.RegularPages.ByPublishDate "Section" "posts").Reverse }}
+                    <li>
+                        <p class="article">
+                            <a href="{{.Permalink }}"> <time> <i> ({{ .Date.Format "2006-01-02" }}) </i> </time> <b> {{.Title}} </b> </a> <br/>
+                            {{.Description}}
+                            {{ range (.GetTerms "tags") }}
+                                <a href ="{{.Permalink}}"> [{{.LinkTitle}}] </a>
+                            {{ end }}
+                        </p>
+                    </li>
+                {{end}}
+                </ul>
+            </article>
+        </main>
+	</body>
+</html>

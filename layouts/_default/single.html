@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        {{partial "header.html" . }}
+	</head>
+	<body>
+        {{partial "head.html" . }}
+        <main>
+            <article class="page">
+                {{ if (.Params.toc) }}
+                <aside>
+                    {{.TableOfContents}}
+                </aside>
+                {{ end }}
+                <section class="content">
+                {{.Content}}
+                </section>
+            </article>
+        </main>
+	</body>
+</html>

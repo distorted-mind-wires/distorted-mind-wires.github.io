@@ -1,0 +1,10 @@
+<figure>
+    {{ $image := resources.Get (.Get "img") }}
+    <img alt="{{ .Get "caption" }}" src="{{ $image.RelPermalink }}" />
+    <figcaption>
+        <h4 class="figure-caption">{{ .Get "caption" }}</h4>
+        {{ if gt (len (.Get "source")) 0 }}
+        <p class="figure-source"> <a href="{{ .Get "source" }}"> Source </a></p>
+        {{ end }}
+    </figcaption>
+</figure>

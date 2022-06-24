@@ -1,0 +1,12 @@
+<div class="snippet-wrapper">
+    <div class="snippet-quote">
+        <blockquote class="snippet-content">
+            <p> {{ .Inner | markdownify }} </p>
+        </blockquote>
+        {{ if gt (len (.Get "source")) 0 }}
+        <div class="snippet-source"> <a href="{{ .Get "source" }}"> {{ .Get "caption" | markdownify }} </a> </div>
+        {{ else if gt (len (.Get "author")) 0 }}
+        <div class="snippet-source"> {{ .Get "author" | markdownify }} - <i> {{ .Get "book" | markdownify }} </i> </div>
+        {{ end }}
+    </div>
+</div>

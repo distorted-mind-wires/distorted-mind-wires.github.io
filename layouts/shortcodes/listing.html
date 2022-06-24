@@ -1,0 +1,15 @@
+{{ .Page.Scratch.Add "listings" 1 }}
+<div class="code-listing">
+    <div class="code">
+        <div class="copy-code">
+            {{ readFile "assets/copy.svg" | safeHTML }}
+        </div>
+        {{- .Inner | markdownify -}}
+    </div>
+    <div class="listing-info">
+        <h4 class="code-caption"> Listing {{ .Page.Scratch.Get "listings" }} - {{.Get "caption" }} </h4>
+        {{ if gt (len (.Get "source")) 0 }}
+            <p class="code-source"> <a href="{{.Get "source"}}"> Source </a> </p>
+        {{ end }}
+    </div>
+</div>

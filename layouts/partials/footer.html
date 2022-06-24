@@ -1,0 +1,12 @@
+<footer>
+    {{ if (.Params.status) }}
+    Status: {{ .Params.status }} -
+    {{ end }}
+    Created
+    <time> {{ .Date.Format "2006-01-02" }} </time>
+    -
+    Tagged under
+    {{ range (.GetTerms "tags") }}
+    <a href ="{{.Permalink}}">[{{.LinkTitle}}]</a>
+    {{ end }}
+</footer>

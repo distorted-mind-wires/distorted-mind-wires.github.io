@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        {{partial "header.html" . }}
+	</head>
+	<body>
+        {{partial "head.html" . }}
+        <main>
+            <article class="page">
+                <h3> Posts tagged <a href="{{.Page.Permalink}}"> {{ .Page.Title }} </a> </h3>
+                <ul>
+                    {{ range (where .Pages "Section" "posts").ByDate.Reverse }}
+                    <li>
+                        <p>
+                            <a href="{{.Permalink }}"> <time> ({{ .Date.Format "2006-01-02" }}) </time> {{.Title}} </a> <br/>
+                            {{.Description}}
+                        </p>
+                    </li>
+                    {{ end }}
+                </ul>
+            </article>
+        </main>
+	</body>
+</html>

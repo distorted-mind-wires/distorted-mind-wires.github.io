@@ -1,0 +1,46 @@
+html {
+    font-size: 62.5%;
+    font-family: 'Source Serif Pro';
+    background-color: rgb(17, 17, 17);
+    color: rgb(241, 241, 241);
+    font-variant-numeric: oldstyle-nums;
+}
+
+h4 {
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+}
+
+a {
+    color: rgb(150, 150, 150);
+}
+
+a:link {
+    color: rgb(241, 241, 241);
+}
+
+blockquote {
+    font-weight: 400;
+    text-align: right;
+    background-color: 0;
+}
+
+blockquote > p {
+    font-style: italic;
+}
+
+body {
+    font-size: 1.8rem;
+    line-height: 1.618;
+    max-width: 40em;
+    margin: auto;
+    padding: 13px;
+}
+
+pre {
+    border: 2px solid rgb(241, 241, 241);
+    padding: 10px;
+    padding-left: 20px;
+    overflow-x: auto;
+}

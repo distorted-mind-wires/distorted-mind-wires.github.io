@@ -1,0 +1,8 @@
+<div class="quote-wrapper">
+    <div class="quote-container">
+        <blockquote class="quote">
+            {{ .Inner | markdownify }}
+        </blockquote>
+        <p class="quote-author"> - {{ .Get "author" }}, <i> {{.Get "source" | markdownify }} </i></p>
+    </div>
+</div>
