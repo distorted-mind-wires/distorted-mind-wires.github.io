@@ -1,7 +1,6 @@
 +++
 title = "About"
 date = 2022-05-02T17:12:07+02:00
-draft = true
 description = ""
 +++
 
